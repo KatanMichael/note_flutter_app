@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:email_validator/email_validator.dart';
 import 'package:note_flutter_app/controllers/MainController.dart';
 
-class LoginScreen extends StatefulWidget {
+class SignupScreen extends StatefulWidget {
   @override
-  _LoginScreenState createState() => _LoginScreenState();
+  _SignupScreenState createState() => _SignupScreenState();
 }
 
-class _LoginScreenState extends State<LoginScreen>
+class _SignupScreenState extends State<SignupScreen>
 {
   MainController controller = MainController();
 
@@ -31,7 +31,7 @@ class _LoginScreenState extends State<LoginScreen>
                 children: <Widget>[
                   Padding(
                     padding: const EdgeInsets.fromLTRB(20,50,0,0),
-                    child: Text("Sign In", style: textStyle),
+                    child: Text("Create New Account", style: textStyle),
                   ),
                 ],
               ),
@@ -79,11 +79,11 @@ class _LoginScreenState extends State<LoginScreen>
                           password = text;
                         });
                         if(text.length < 6 && text.length >= 1)
-                          {
-                            setState(() {
-                              passwordFormat = "Password too short";
-                            });
-                          }else{
+                        {
+                          setState(() {
+                            passwordFormat = "Password too short";
+                          });
+                        }else{
                           setState(() {
                             passwordFormat = "";
                           });
@@ -103,7 +103,7 @@ class _LoginScreenState extends State<LoginScreen>
                               borderRadius: BorderRadius.circular(18.0),
                               side: BorderSide(color: Colors.blueAccent)),
                           onPressed: () {
-                            creataUserWithEmailAndPassowrd(email, password);
+                            loginWithEmailAndPassowrd(email, password);
                           },
                           color: Colors.blueAccent,
                           textColor: Colors.white,
@@ -113,14 +113,14 @@ class _LoginScreenState extends State<LoginScreen>
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: <Widget>[
-                            Text("Not have an Account? ", style: TextStyle(fontSize: 18),),
+                            Text("have an Account? ", style: TextStyle(fontSize: 18),),
                             FlatButton(
-                              child: Text("Sign Up!", style: TextStyle(fontSize: 18, color: Colors.blue),
-                            )
-                                  ,
+                              child: Text("Login!", style: TextStyle(fontSize: 18, color: Colors.blue),
+                              )
+                              ,
                               onPressed: ()
                               {
-                                Navigator.pushNamed(context, '/signUp');
+                                Navigator.pop(context);
                               },
                             ),
                           ],
@@ -137,21 +137,21 @@ class _LoginScreenState extends State<LoginScreen>
     );
   }
 
-  void creataUserWithEmailAndPassowrd(String email,String password)
+  void loginWithEmailAndPassowrd(String email,String password)
   {
     if(passwordFormat.isEmpty && emailFormat.isEmpty && password.isNotEmpty && email.isNotEmpty)
-      {
-        controller.createUserWithEmailAndPassowrd(email: email, password: password,
-        onComplete: (userId)
     {
-      print(userId);
-    },
+      controller.createUserWithEmailAndPassowrd(email: email, password: password,
+          onComplete: (userId)
+          {
+            print(userId);
+          },
           onError: (erorr)
-            {
-              print("Error: ${erorr}");
-            }
-        );
-      }
+          {
+            print("Error: ${erorr}");
+          }
+      );
+    }
   }
 
 }

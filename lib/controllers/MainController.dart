@@ -1,4 +1,6 @@
 
+import 'dart:math';
+
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:note_flutter_app/services/FirebaseService.dart';
 
@@ -28,5 +30,28 @@ class MainController {
       }
 
   }
+
+
+  void createUserWithEmailAndPassowrd({String email, String password,
+    Function onComplete,
+    Function onError}) async
+  {
+    AuthResult result;
+
+    try
+    {
+      result = await firebaseService.createUserWithEmailAndPassowrd(email: email, password: password);
+
+    }catch(e)
+    {
+      onError(e);
+    }
+
+    if(result!= null)
+      {
+        onComplete(result.user.uid);
+      }
+  }
+
   MainController._internal();
 }

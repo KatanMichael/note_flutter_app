@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:note_flutter_app/Screens/SignupScreen.dart';
 import './Screens/LoginScreen.dart';
 
 void main() {
   runApp(MaterialApp(
     initialRoute: "/login",
     routes: {
-      "/login": (context) => LoginScreen()
+      "/login": (context) => LoginScreen(),
+      "/signUp": (context) => SignupScreen()
     },
   ));
 }

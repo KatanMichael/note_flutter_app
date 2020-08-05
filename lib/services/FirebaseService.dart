@@ -13,4 +13,8 @@ class FirebaseService
     return auth.signInWithEmailAndPassword(email: email, password: passowrd);
   }
 
+  Future<AuthResult> createUserWithEmailAndPassowrd({String email, String password})
+  {
+    return auth.createUserWithEmailAndPassword(email: email, password: password);
+  }
 }
