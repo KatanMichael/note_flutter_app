@@ -1,4 +1,4 @@
-
+import '../models/User.dart';
 import 'dart:math';
 
 import 'package:firebase_auth/firebase_auth.dart';
@@ -31,6 +31,20 @@ class MainController {
 
   }
 
+  void getUserDataFromFirestore({userId, Function onComplete, Function onError}) async
+  {
+
+    try{
+      var querySnapshot = await firebaseService.getUserDataFromFirestore(userId: userId);
+      Map data = querySnapshot.documents[0].data;
+      User tempUser = User(useruid: data['userId'], userEmail: data['userEmail'], username: data['userDisplayName']);
+      onComplete(tempUser);
+
+    }catch(e)
+    {
+      onError(e);
+    }
+  }
 
   void createUserWithEmailAndPassowrd({String email, String password,
     Function onComplete,
@@ -54,4 +68,13 @@ class MainController {
   }
 
   MainController._internal();
+
+  void setCurrentUserId(userId) {
+    firebaseService.currentUserId = userId;
+  }
+
+  String getCurrentUserId()
+  {
+    return firebaseService.currentUserId;
+  }
 }

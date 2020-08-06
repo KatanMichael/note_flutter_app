@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:note_flutter_app/Screens/MainScreen.dart';
 import 'package:note_flutter_app/Screens/SignupScreen.dart';
 import './Screens/LoginScreen.dart';
 
@@ -7,7 +8,8 @@ void main() {
     initialRoute: "/login",
     routes: {
       "/login": (context) => LoginScreen(),
-      "/signUp": (context) => SignupScreen()
+      "/signUp": (context) => SignupScreen(),
+      "/mainScreen" : (context) => MainScreen(),
     },
   ));
 }
