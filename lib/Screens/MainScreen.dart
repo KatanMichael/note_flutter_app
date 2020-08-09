@@ -42,7 +42,8 @@ class _MainScreenState extends State<MainScreen>
   @override
   Widget build(BuildContext context)
   {
-
+    // CR: Don't replace the entire tree on this condition,
+    // CR: try to have the same skeleton and have an inner widget do this condition and display accordingly
     if(user == null)
       {
         return Scaffold(

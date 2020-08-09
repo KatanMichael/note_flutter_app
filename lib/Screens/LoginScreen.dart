@@ -1,6 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:email_validator/email_validator.dart';
 import 'package:note_flutter_app/controllers/MainController.dart';
+// CR: this page UI is buggy.
+// 1. Sign In not centered
+// 2. No padding from screen sides
+// 3. Submit button too small for tapping
+// 4. Screen should be scrollable when keyboard is open.
+
+// CR: In General, use the auto-format feature of Android Studio to format your code. (on Mac: Cmd+Option+L, don't know the Windows shortkey)
 
 class LoginScreen extends StatefulWidget {
   @override

@@ -1,0 +1,69 @@
+{
+  "project_info": {
+    "project_number": "918571999935",
+    "firebase_url": "https://reactnativetest-c4436.firebaseio.com",
+    "project_id": "reactnativetest-c4436",
+    "storage_bucket": "reactnativetest-c4436.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:918571999935:android:a91f73db949a727df45c0a",
+        "android_client_info": {
+          "package_name": "com.michaelkatan.note_flutter_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "918571999935-k31k881m3pkbrg821v3acn51b3tceoeu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB-_8Q_qEnlQLcMCbmkw_seqqSk0xARDWY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "918571999935-k31k881m3pkbrg821v3acn51b3tceoeu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:918571999935:android:d75881dc61d617e3f45c0a",
+        "android_client_info": {
+          "package_name": "com.michaelkatan.world_time"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "918571999935-k31k881m3pkbrg821v3acn51b3tceoeu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB-_8Q_qEnlQLcMCbmkw_seqqSk0xARDWY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "918571999935-k31k881m3pkbrg821v3acn51b3tceoeu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

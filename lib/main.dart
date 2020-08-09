@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:note_flutter_app/Screens/MainScreen.dart';
 import 'package:note_flutter_app/Screens/SignupScreen.dart';
+
+// CR: better to use absolute imports so when you move (or any) this file it won't break.
+// CR: same as the import of the SignupScreen above
 import './Screens/LoginScreen.dart';
 
 void main() {
@@ -14,6 +17,7 @@ void main() {
   ));
 }
 
+// CR: This is redundant
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override

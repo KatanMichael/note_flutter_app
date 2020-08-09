@@ -1,6 +1,9 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
+// CR: Maybe call it AuthService and hide the Firebase-specific models (like AuthResult and such)
+// CR: Tomorrow you might want to use a different auth provider and it will be useful to have the same interface
+
 class FirebaseService
 {
   FirebaseAuth auth;
@@ -8,6 +11,8 @@ class FirebaseService
 
   String currentUserId;
 
+  // CR: pass Firebase objects from outside instead of creating them here
+  // CR: better to test this way
   FirebaseService()
   {
     auth = FirebaseAuth.instance;

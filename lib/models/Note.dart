@@ -1,10 +1,9 @@
-
+// Use data classes from the `freezed` library
 class Note
 {
   final String _text;
   final String _title;
   final String _noteUserId;
-
 
   Note.name(this._text, this._title, this._noteUserId);
 

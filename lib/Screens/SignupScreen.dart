@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:email_validator/email_validator.dart';
 import 'package:note_flutter_app/controllers/MainController.dart';
-
+// CR: Same UI issues as in the login screen
 class SignupScreen extends StatefulWidget {
   @override
   _SignupScreenState createState() => _SignupScreenState();
@@ -75,6 +75,8 @@ class _SignupScreenState extends State<SignupScreen>
                       obscureText: true,
                       onChanged: (text)
                       {
+                        // CR: This code is duplicated across Login and Signup,
+                        // CR: Consider implementing it in a reusable Widget
                         setState(() {
                           password = text;
                         });
@@ -113,6 +115,8 @@ class _SignupScreenState extends State<SignupScreen>
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: <Widget>[
+                            // CR: Use Theme & ThemeData to have consistent text sizes and colors,
+                            // CR: try not to use inline numbers as they're hard to change
                             Text("have an Account? ", style: TextStyle(fontSize: 18),),
                             FlatButton(
                               child: Text("Login!", style: TextStyle(fontSize: 18, color: Colors.blue),
